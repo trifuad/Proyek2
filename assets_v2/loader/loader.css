@@ -1,0 +1,11 @@
+#loader{
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  margin: 0 auto;
+}
+
+#content{
+display: none;
+
+}

@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 31, 2019 at 08:25 PM
--- Server version: 10.1.9-MariaDB
--- PHP Version: 5.6.15
+-- Waktu pembuatan: 02 Nov 2020 pada 09.24
+-- Versi server: 10.1.37-MariaDB
+-- Versi PHP: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `perpusku`
+-- Database: `perpus_proyek`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,18 +36,16 @@ CREATE TABLE `admin` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `nama_admin`, `username`, `password`) VALUES
-(1, 'Nawawi', 'admin', '827ccb0eea8a706c4c34a16891f84e7b'),
-(2, 'Imam Nawawi', 'imam', 'eaccb8ea6090a40a98aa28c071810371'),
-(3, 'Fiqisulaiman', 'admin', '21232f297a57a5a743894a0e4a801fc3');
+(1, 'Admin', 'admin', '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `anggota`
+-- Struktur dari tabel `anggota`
 --
 
 CREATE TABLE `anggota` (
@@ -60,29 +60,17 @@ CREATE TABLE `anggota` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `anggota`
+-- Dumping data untuk tabel `anggota`
 --
 
 INSERT INTO `anggota` (`id_anggota`, `username`, `nama_anggota`, `gender`, `no_telp`, `alamat`, `email`, `password`) VALUES
-(1, 'irfan', 'Irfan Maulana', 'Laki-Laki', '02144445566', 'BSD City', 'irfan@gmail.com', '202cb962ac59075b964b07152d234b70'),
-(2, '', 'Nur Kumalasari', 'Perempuan', '02133335555', 'Ciledug', 'nur@gmail.com', '123'),
-(3, '', 'Sanjaya Wijaya Kusuma', 'Laki-Laki', '02111115555', 'Cimone', 'sanjaya@gmail.com', '123'),
-(4, '', 'Eva Irfianingsih', 'Perempuan', '02166665555', 'Tangerang', 'eva@gmail.com', '123'),
-(5, '', 'Ifqoh Permatasari', 'Perempuan', '02177775555', 'Cengkareng', 'ifqoh@gmail.com', '123'),
-(6, '', 'Indah Riana', 'Perempuan', '02188885555', 'Fatmawati', 'indah@gmail.com', '123'),
-(7, '', 'Tiwie Andrawati', 'Perempuan', '02199995555', 'Warung Jati', 'tiwie@gmail.com', '123'),
-(11, 'rzkrizki', 'Imam Nawawi', 'Laki-Laki', '087829398630', 'jl H Isa no 1 Rengas Ciputat Timur', 'imam.imw@bsi.ac.id', '21232f297a57a5a743894a0e4a801fc3'),
-(28, '', 'Double', 'Laki-Laki', '087766554433', 'Seacrest Country', 'double@gmail.com', '123456'),
-(10, '', 'Zaenal Abidin', 'Laki-Laki', '02133337777', 'Bekasi', 'Zaenal@gmail.com', '123'),
-(24, 'rechtweez', 'anjay mabar', 'Perempuan', '089988776655', 'Kegoblokan', 'rechtweez24@gmail.com', 'anjaymabar'),
-(19, '', 'Luca Manfe', 'Laki-Laki', '089988776655', 'Italy', 'lucamanfe@gmail.com', 'qwerty'),
-(23, '', 'Fiqisulaiman', 'Laki-Laki', '089663112386', 'Condet', 'fiqisulaiman24@gmail.com', '123456'),
-(25, 'piatek', 'Piatek', 'Laki-Laki', '089988771122', 'Polandia', 'piatek@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4');
+(1, 'bening', 'Bening Sukmaningrum', 'Perempuan', '082190223410', 'Turen, Malang', 'bening@gmail.com', 'ce60a0e18edc482f6c3cbd2fa1544c04'),
+(2, 'anggota', 'Anggota', 'Laki-Laki', '0812237891910', 'Malang', 'senyumina@gmail.com', 'dfb9e85bc0da607ff76e0559c62537e8');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buku`
+-- Struktur dari tabel `buku`
 --
 
 CREATE TABLE `buku` (
@@ -101,7 +89,7 @@ CREATE TABLE `buku` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `buku`
+-- Dumping data untuk tabel `buku`
 --
 
 INSERT INTO `buku` (`id_buku`, `id_kategori`, `judul_buku`, `pengarang`, `thn_terbit`, `penerbit`, `isbn`, `jumlah_buku`, `lokasi`, `gambar`, `tgl_input`, `status_buku`) VALUES
@@ -118,7 +106,7 @@ INSERT INTO `buku` (`id_buku`, `id_kategori`, `judul_buku`, `pengarang`, `thn_te
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_pinjam`
+-- Struktur dari tabel `detail_pinjam`
 --
 
 CREATE TABLE `detail_pinjam` (
@@ -131,7 +119,7 @@ CREATE TABLE `detail_pinjam` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -140,7 +128,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
@@ -157,7 +145,7 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orderan`
+-- Struktur dari tabel `orderan`
 --
 
 CREATE TABLE `orderan` (
@@ -175,7 +163,7 @@ CREATE TABLE `orderan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `orderan`
+-- Dumping data untuk tabel `orderan`
 --
 
 INSERT INTO `orderan` (`id_pinjam`, `tgl_pencatatan`, `id_anggota`, `id_buku`, `tgl_pinjam`, `tgl_kembali`, `denda`, `tgl_pengembalian`, `total_denda`, `status_pengembalian`, `status_peminjaman`) VALUES
@@ -185,7 +173,7 @@ INSERT INTO `orderan` (`id_pinjam`, `tgl_pencatatan`, `id_anggota`, `id_buku`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `peminjaman`
+-- Struktur dari tabel `peminjaman`
 --
 
 CREATE TABLE `peminjaman` (
@@ -201,7 +189,7 @@ CREATE TABLE `peminjaman` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `peminjaman`
+-- Dumping data untuk tabel `peminjaman`
 --
 
 INSERT INTO `peminjaman` (`id_pinjam`, `tanggal_input`, `id_anggota`, `tgl_pinjam`, `tgl_kembali`, `tgl_pengembalian`, `total_denda`, `status_peminjaman`, `status_pengembalian`) VALUES
@@ -271,7 +259,7 @@ INSERT INTO `peminjaman` (`id_pinjam`, `tanggal_input`, `id_anggota`, `tgl_pinja
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
+-- Struktur dari tabel `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -289,7 +277,7 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `transaksi`
+-- Dumping data untuk tabel `transaksi`
 --
 
 INSERT INTO `transaksi` (`id_pinjam`, `tgl_pencatatan`, `id_anggota`, `id_buku`, `tgl_pinjam`, `tgl_kembali`, `denda`, `tgl_pengembalian`, `total_denda`, `status_pengembalian`, `status_peminjaman`) VALUES
@@ -300,59 +288,64 @@ INSERT INTO `transaksi` (`id_pinjam`, `tgl_pencatatan`, `id_anggota`, `id_buku`,
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `anggota`
+-- Indeks untuk tabel `anggota`
 --
 ALTER TABLE `anggota`
   ADD PRIMARY KEY (`id_anggota`);
 
 --
--- Indexes for table `buku`
+-- Indeks untuk tabel `buku`
 --
 ALTER TABLE `buku`
   ADD PRIMARY KEY (`id_buku`);
 
 --
--- Indexes for table `kategori`
+-- Indeks untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indexes for table `peminjaman`
+-- Indeks untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
   ADD PRIMARY KEY (`id_pinjam`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `anggota`
+-- AUTO_INCREMENT untuk tabel `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id_anggota` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_anggota` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
 --
--- AUTO_INCREMENT for table `buku`
+-- AUTO_INCREMENT untuk tabel `buku`
 --
 ALTER TABLE `buku`
   MODIFY `id_buku` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

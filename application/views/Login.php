@@ -72,9 +72,6 @@
                       Login
                     </button>
                   </div>
-                  <div class="text-center">
-                    Copyright &copy; 2019 Fiqisulaiman
-                  </div>
                 </form>
               </div>
             </div>

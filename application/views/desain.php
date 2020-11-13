@@ -1,7 +1,7 @@
 <head>
 	<title>Perpustakaan | Detail Buku</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="<?php echo base_url().'assets_v2/img/favicon/books-icon-red.png'?>" type="image/x-icon"/>
+    <link rel="icon" href="<?php echo base_url().'assets_v2/img/favicon/smp-icon.png'?>" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets_v2/css/bootstrap.min.css' ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets_v2/css/atlantis.min.css'?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets_v2/css/fonts.min.css' ?>">

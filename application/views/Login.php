@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title><?php echo $login_title ?></title>
-  <link rel="icon" href="<?php echo base_url().'assets_v2/img/favicon/books-icon-red.png'?>" type="image/x-icon">
+  <link rel="icon" href="<?php echo base_url().'assets_v2/img/favicon/smp-icon.png'?>" type="image/x-icon">
   <link rel="stylesheet" href="<?php echo base_url().'libs/css/bootstrap.min.css'?>">
   <link rel="stylesheet" href="<?php echo base_url().'libs/css/fontawesome.min.css'?>">
   <link rel="stylesheet" href="<?php echo base_url().'libs/style.css'?>">
@@ -49,7 +49,7 @@
                 }
             ?>
             <div class="login-brand">
-              <img src="<?php echo base_url().'assets_v2/img/website-logo/logo-white.png'?>" alt="logo" width="300">
+              <img src="<?php echo base_url().'assets_v2/img/website-logo/logosmp.png'?>" alt="logo" width="300">
             </div>
 
             <div class="card card-dark">

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="<?php echo base_url().'member' ?>">
-			<img src="<?php echo base_url().'assets_v2/img/website-logo/logo-white.png' ?>" alt="logoweb" width="150">
+			<img src="<?php echo base_url().'assets_v2/img/website-logo/logosmp.png' ?>" alt="logoweb" width="150">
 		</a>
 		<button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
 			<span class="navbar-toggler-icon"></span>

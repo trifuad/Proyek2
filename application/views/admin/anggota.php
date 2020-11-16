@@ -20,7 +20,9 @@
                     <th>No.Telpon</th>
                     <th>Alamat</th>
                     <th>Email</th>
+                    <th>Username</th>
                     <th>Pilihan</th>
+                   
                   </tr>
                 </thead>
                 <tbody>
@@ -35,6 +37,7 @@
                     <td><?php echo $a->no_telp ?></td>
                     <td><?php echo $a->alamat ?></td>
                     <td><?php echo $a->email ?></td>
+                    <td><?php echo $a->username ?></td>
                     <td nowrap="nowrap">
                       <a class="btn btn-success btn-xs" href="#modalEditAnggota<?php echo base_url().'admin/anggota/'.$a->id_anggota; ?>" data-toggle="modal"><i class="fas fa-edit"></i> Edit</a>
                       <a onclick="hapus()" class="btn btn-danger btn-xs" href="<?php echo base_url().'admin/hapus_anggota/'.$a->id_anggota; ?>"><i class="fas fa-trash-alt"></i> Hapus</a>
@@ -87,6 +90,11 @@
           <div class="form-group">
             <label><i class="fas fa-envelope text-dark"></i> Email</label>
             <input type="text" name="email" class="form-control" id="email">
+          </div>
+
+          <div class="form-group">
+            <label><i class="fas fa-user text-dark"></i> Username</label>
+            <input type="text" name="username" class="form-control" id="username">
           </div>
 
           <div class="form-group">
@@ -152,6 +160,13 @@
             <?php echo form_error('email'); ?>
           </div>
 
+          
+          <div class="form-group">
+            <label><i class="fas fa-envelope text-dark"></i> Username</label>
+            <input type="text" name="username" class="form-control" value="<?php echo $a->username; ?>">
+            <?php echo form_error('username'); ?>
+          </div>
+
           <div class="form-group">
             <label><i class="fas fa-key text-dark"></i> Password</label>
             <input type="password" name="password" class="form-control" value="<?php echo $a->password; ?>">
@@ -176,7 +191,7 @@
     <footer class="footer">
       <div class="container-fluid">
         <div class="copyright ml-left">
-          Copyright © 2019, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">Fiqisulaiman</a>
+          Copyright © 2020, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">SMP 1</a>
         </div>        
       </div>
     </footer>

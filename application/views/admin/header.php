@@ -67,7 +67,7 @@
             <span class="sidebar-mini-icon">
               <i class="fa fa-ellipsis-h"></i>
             </span>
-            <h4 class="text-section">Menu Navigasi</h4>
+            <h4 class="text-section">Navigation</h4>
           </li>
 
           <li class="nav-item">
@@ -94,7 +94,7 @@
           <li class="nav-item">
             <a href="<?php echo base_url().'admin/peminjaman'; ?>">
               <i class="fas fa-retweet text-dark"></i>
-              <p>Transaksi Peminjaman</p>
+              <p>Peminjaman Buku</p>
             </a>
           </li>
 

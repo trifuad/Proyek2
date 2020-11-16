@@ -210,11 +210,13 @@ class Admin extends CI_Controller{
       $no_telp = $this->input->post('no_telp');
       $alamat = $this->input->post('alamat');
       $email = $this->input->post('email');
+      $username=$this->input->post('username');
       $password = $this->input->post('password');
       $this->form_validation->set_rules('nama_anggota','Nama Anggota','required');
       $this->form_validation->set_rules('no_telp','No.Telpon','required');
       $this->form_validation->set_rules('alamat','Alamat','required');
       $this->form_validation->set_rules('email','Email','required');
+      $this->form_validation->set_rules('username','Username','required');
       $this->form_validation->set_rules('password','Password','required');
       if($this->form_validation->run() != false){
           $data = array(
@@ -223,6 +225,7 @@ class Admin extends CI_Controller{
             'no_telp' => $no_telp,
             'alamat' => $alamat,
             'email' => $email,
+            'username'=>$username,
             'password' => $password,
           );
           $this->M_perpus->insert_data($data,'anggota');
@@ -251,12 +254,14 @@ class Admin extends CI_Controller{
         $no_telp = $this->input->post('no_telp');
         $alamat = $this->input->post('alamat');
         $email = $this->input->post('email');
+        $username=$this->input->post('username');
         $password = $this->input->post('password');
 
         $this->form_validation->set_rules('nama_anggota','Nama Anggota','required');
         $this->form_validation->set_rules('no_telp','No.Telpon','required');
         $this->form_validation->set_rules('alamat','Alamat','required');
         $this->form_validation->set_rules('email','Email','required');
+        $this->form_validation->set_rules('username','Username','required');
         $this->form_validation->set_rules('password','Password','required');
 
         if($this->form_validation->run() != false){
@@ -267,6 +272,7 @@ class Admin extends CI_Controller{
               'no_telp' => $no_telp,
               'alamat' => $alamat,
               'email' => $email,
+              'username'=>$username,
               'password' => $password,
             );
 

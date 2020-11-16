@@ -244,7 +244,7 @@ Modal Edit Buku -->
     <footer class="footer">
       <div class="container-fluid">
         <div class="copyright ml-left">
-          Copyright © 2019, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">Fiqisulaiman</a>
+          Copyright © 2020, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">SMP 1</a>
         </div>        
       </div>
     </footer>

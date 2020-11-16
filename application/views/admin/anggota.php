@@ -162,7 +162,7 @@
 
           
           <div class="form-group">
-            <label><i class="fas fa-envelope text-dark"></i> Username</label>
+            <label><i class="fas fa-user text-dark"></i> Username</label>
             <input type="text" name="username" class="form-control" value="<?php echo $a->username; ?>">
             <?php echo form_error('username'); ?>
           </div>

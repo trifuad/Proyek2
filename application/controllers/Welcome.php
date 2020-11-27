@@ -55,4 +55,38 @@ class Welcome extends CI_Controller {
 				$this->load->view('login',$data);
 			}
 	}
+
+	public function forgot(){
+
+		$data = array(
+			'login_tile' => 'Login Perpustakaan SMPN 1 Turen',
+			'footer_title' => 'Copyright &copy;', 
+		);
+
+		$this->load->view('admin/header');
+		$this->load->view('admin/ganti_password');
+		$this->load->view('admin/footer');
+
+		function ganti_password(){
+			
+		  }
+		
+		  function ganti_password_act(){
+			$pass_baru = $this->input->post('pass_baru');
+			$ulang_pass = $this->input->post('ulang_pass');
+		
+			$this->form_validation->set_rules('pass_baru','Password Baru','required|matches[ulang_pass]');
+			$this->form_validation->set_rules('ulang_pass','Ulangi Password Baru','required');
+			if($this->form_validation->run() != false){
+			  $data = array('password' => md5($pass_baru));
+			  $w = array('id_admin' => $this->session->userdata('id'));
+			  $this->M_perpus->update_data('admin',$data,$w);
+			  redirect(base_url().'admin/ganti_password?pesan=berhasil');
+			}else{
+			  $this->load->view('admin/header');
+			  $this->load->view('admin/ganti_password');
+			  $this->load->view('admin/footer');
+			}
+		  }
+	}
 }

@@ -19,7 +19,7 @@
       <!-- Logo Header -->
       <div class="logo-header" data-background-color="dark">
         <a href="<?php echo base_url().'admin'; ?>" class="logo">
-          <img width="170" src="<?php echo base_url().'assets_v2/img/website-logo/logo-white.png' ?>">
+          <img width="170" src="<?php echo base_url().'assets_v2/img/website-logo/logosmp.png' ?>">
         </a>
         <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon">

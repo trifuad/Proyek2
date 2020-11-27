@@ -46,11 +46,7 @@ class Admin extends CI_Controller{
     if($this->form_validation->run() != false){
       $data = array('password' => md5($pass_baru));
       $w = array('id_admin' => $this->session->userdata('id'));
-<<<<<<< HEAD
       $this->M_perpus->update_data('admin',$data,$w);
-=======
-      $this->M_perpus->update_data($w,$data,'admin');
->>>>>>> 6ce37a8d875cfb68aebb0456a76144a03982cb5b
       redirect(base_url().'admin/ganti_password?pesan=berhasil');
     }else{
       $this->load->view('admin/header');

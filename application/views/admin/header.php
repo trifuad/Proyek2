@@ -43,7 +43,7 @@
           <ul class="dropdown-menu dropdown-user animated fadeIn fast">
             <div class="dropdown-user-scroll scrollbar-outer">
               <li>
-                <a class="dropdown-item" href="<?php echo base_url().'admin/ganti_password' ?>"><i class="fas fa-key"></i> Ganti Password</a>
+                <a class="dropdown-item" href="<?php echo base_url().'admin/ganti_password_admin' ?>"><i class="fas fa-key"></i> Ganti Password</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="<?php echo base_url().'admin/logout'?>"><i class="fas fa-sign-out-alt"></i> Logout</a>
               </li>

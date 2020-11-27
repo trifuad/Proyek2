@@ -37,6 +37,12 @@ class Admin extends CI_Controller{
     $this->load->view('admin/footer');
   }
 
+  function ganti_password_admin(){
+    $this->load->view('admin/header');
+    $this->load->view('admin/ganti_password1');
+    $this->load->view('admin/footer');
+  }
+
   function ganti_password_act(){
     $pass_baru = $this->input->post('pass_baru');
     $ulang_pass = $this->input->post('ulang_pass');

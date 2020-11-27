@@ -71,6 +71,9 @@
                     <button type="submit" class="btn btn-dark btn-block" tabindex="4">
                       Login
                     </button>
+                    <button type="submit" class="btn btn-dark btn-block" tabindex="4">
+                      Forgot Password
+                    </button>
                   </div>
                 </form>
               </div>

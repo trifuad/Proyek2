@@ -31,15 +31,9 @@ class Admin extends CI_Controller{
   }
 
   //fitur ganti password
-  function ganti_password(){
-    $this->load->view('admin/header');
-    $this->load->view('admin/ganti_password');
-    $this->load->view('admin/footer');
-  }
-
   function ganti_password_admin(){
     $this->load->view('admin/header');
-    $this->load->view('admin/ganti_password1');
+    $this->load->view('admin/ganti_password');
     $this->load->view('admin/footer');
   }
 
@@ -53,10 +47,10 @@ class Admin extends CI_Controller{
       $data = array('password' => md5($pass_baru));
       $w = array('id_admin' => $this->session->userdata('id'));
       $this->M_perpus->update_data('admin',$data,$w);
-      redirect(base_url().'admin/ganti_password?pesan=berhasil');
+      redirect(base_url().'admin/ganti_password_admin?pesan=berhasil');
     }else{
       $this->load->view('admin/header');
-      $this->load->view('admin/ganti_password');
+      $this->load->view('admin/ganti_password_admin');
       $this->load->view('admin/footer');
     }
   }

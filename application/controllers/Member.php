@@ -15,6 +15,7 @@ class Member extends CI_Controller {
 	{
 		$data['anggota'] = $this->M_perpus->get_data('anggota')->result();
 		$data['buku'] = $this->M_perpus->get_data('buku')->result();
+		$data['profil'] = $this->M_perpus->get_data('profil')->result();
 
 		$data['header'] = 'Katalog Buku';
 		$data['title'] = 'Daftar Buku';

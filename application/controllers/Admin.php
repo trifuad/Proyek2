@@ -19,6 +19,8 @@ class Admin extends CI_Controller{
     $data['anggota'] = $this->db->query("select * from anggota order by id_anggota desc limit 5")->result();
     // Menampilkan Jumlah Buku Di Menu Dashboard
     $data['buku'] = $this->db->query("select * from buku order by id_buku desc limit 5")->result();
+    // Menampilkan Informasi Sekolah  Di Menu Dashboard
+    $data['profil'] = $this->db->query("select * from profil order by id_profil desc limit 5")->result();
 
     $this->load->view('admin/header');
     $this->load->view('admin/index',$data);
@@ -193,6 +195,122 @@ class Admin extends CI_Controller{
             $data['kategori'] = $this->M_perpus->get_data('kategori')->result();
             $this->load->view('admin/header');
             $this->load->view('admin/editbuku',$data);
+            $this->load->view('admin/footer');
+        }
+    }
+
+    // Function CRUD Profil Update
+    function profil(){
+      $data['profil'] = $this->M_perpus->get_data('profil')->result();
+      $data['kategoriprofil'] = $this->M_perpus->get_data('kategoriprofil')->result();
+
+      $this->load->view('admin/header');
+      $this->load->view('admin/profil',$data);
+      $this->load->view('admin/footer');
+    }
+
+    function tambah_profil_act(){
+      $tgl_input = date('Y-m-d');
+      $id_kategoriprofil = $this->input->post('id_kategoriprofil');
+      $judul_profil = $this->input->post('judul_profil');
+      $isi_satu = $this->input->post('isi_satu');
+      $isi_dua = $this->input->post('isi_dua');
+      $this->form_validation->set_rules('id_kategoriprofil','Kategori profil','required');
+      $this->form_validation->set_rules('judul_profil','Judul Profil','required');
+      if($this->form_validation->run() != false){
+        //configurasi upload Gambar
+        $config['upload_path'] = './assets/upload/';
+        $config['allowed_types'] = 'jpg|png|jpeg';
+        $config['max_size'] = '2048';
+        $config['file_name'] = 'gambar'.time();
+
+        $this->load->library('upload',$config);
+
+        if($this->upload->do_upload('foto')){
+          $image = $this->upload->data();
+
+          $data = array(
+            'id_kategoriprofil' => $id_kategoriprofil,
+            'judul_profil' => $judul_profil,
+            'isi_satu' => $isi_satu,
+            'isi_dua' => $isi_dua,
+            'gambar' => $image['file_name'],
+            'tgl_input' => $tgl_input
+          );
+          $this->M_perpus->insert_data($data,'profil');
+          redirect(base_url().'admin/profil');
+        }else{
+          $this->load->view('admin/header');
+          $this->load->view('admin/profil');
+          $this->load->view('admin/footer');
+        }
+      }
+    }
+
+      function hapus_profil($id){
+        $where = array('id_profil' => $id);
+        $this->M_perpus->delete_data($where,'profil');
+        redirect(base_url().'admin/profil');
+      }
+
+    function edit_profil($id){
+      $where = array('id_profil' => $id);
+      $data['profil'] = $this->db->query("select * from profil P, kategoriprofil K where P.id_kategoriprofil=K.id_kategoriprofil and P.id_profil='$id'")->result();
+      $data['kategoriprofil'] = $this->M_perpus->get_data('kategoriprofil')->result();
+
+      $this->load->view('admin/header');
+      $this->load->view('admin/editprofil',$data);
+      $this->load->view('admin/footer');
+    }
+
+    function update_profil(){
+      $id = $this->input->post('id');
+      $id_kategori = $this->input->post('id_kategoriprofil');
+      $judul_profil = $this->input->post('judul_profil');
+      $isi_satu = $this->input->post('isi_satu');
+      $isi_dua = $this->input->post('isi_dua');
+
+      $this->form_validation->set_rules('id_kategoriprofil','ID Kategori','required');
+      $this->form_validation->set_rules('judul_profil','Judul Profil','required|min_length[4]');
+      $this->form_validation->set_rules('isi_satu','Isi Satu','required|min_length[4]');
+      $this->form_validation->set_rules('isi_dua','isi Dua','required|min_length[4]');
+
+      if($this->form_validation->run() != false){
+          $config['upload_path'] = './assets/upload/';
+          $config['allowed_types'] = 'jpg|png|jpeg';
+          $config['max_size'] = '2048';
+          $config['file_name'] = 'gambar'.time();
+
+          $this->load->library('upload',$config);
+
+          $where = array('id_profil' => $id);
+          $data = array(
+            'id_kategoriprofil' =>$id_kategoriprofil,
+            'judul_profil' =>$judul_profil,
+            'isi_satu' =>$isi_satu,
+            'isi_dua' =>$isi_dua,
+            'gambar' =>$image['file_name']
+          );
+
+           if($this->upload->do_upload('foto')){
+              //proses upload Gambar
+              $image = $this->upload->data();
+              unlink('assets/upload/'.$this->input->post('old_pict',TRUE));
+              $data['gambar'] = $image['file_name'];
+
+              $this->M_perpus->update_data('profil',$data,$where);
+            } else{
+              $this->M_perpus->update_data('profil',$data,$where);
+            }
+
+          $this->M_perpus->update_data('profil',$data,$where);
+          redirect(base_url().'admin/profil');
+        } else{
+            $where = array('id_profil' =>$id);
+            $data['profil'] = $this->db->query("select * from profil P, kategoriprofil K where P.id_kategoriprofil=K.id_kategoriprofil and P.id_profil='$id'")->result();
+            $data['kategoriprofil'] = $this->M_perpus->get_data('kategoriprofil')->result();
+            $this->load->view('admin/header');
+            $this->load->view('admin/editprofil',$data);
             $this->load->view('admin/footer');
         }
     }

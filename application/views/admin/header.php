@@ -78,6 +78,13 @@
           </li>
 
           <li class="nav-item">
+            <a href="<?php echo base_url().'admin/profil'; ?>">
+              <i class="fa fa-school text-dark"></i>
+              <p>Profil Sekolah</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="<?php echo base_url().'admin/buku'; ?>">
               <i class="fa fa-book-open text-dark"></i>
               <p>Data Buku</p>

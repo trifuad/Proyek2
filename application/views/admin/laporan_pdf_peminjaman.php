@@ -17,7 +17,7 @@
 		text-align: center;
 	}
 </style>
-<h3>Laporan Data Peminjaman Peprustakaan Al Iqra</h3>
+<h3>Laporan Data Peminjaman Peprustakaan</h3>
 <table>
 	<tr>
 		<td>Dari tgl</td>

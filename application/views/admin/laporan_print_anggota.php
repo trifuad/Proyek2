@@ -17,7 +17,7 @@
 		text-align: center;
 	}
 </style>
-<h3>Laporan Data Buku Peprustakaan Al Iqra</h3>
+<h3>Laporan Data Buku Peprustakaan</h3>
 <br>
 <table class="table-data">
 	<thead>

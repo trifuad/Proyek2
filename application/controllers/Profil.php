@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Buku extends CI_Controller {
+class Profil extends CI_Controller {
 	
-	function profil_sekolah(){
+	public function profil_sekolah(){
 		$id = $this->uri->segment(3);
 		$id_profil = $_GET['id_profil'];
 		if ($id_profil!=null) {
@@ -25,5 +25,5 @@ class Buku extends CI_Controller {
 		}
 	}
 }
-/* End of file Buku.php */
-/* Location: ./application/controllers/Buku.php */
+/* End of file Profil.php */
+/* Location: ./application/controllers/Profil.php */

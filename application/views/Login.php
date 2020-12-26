@@ -81,7 +81,7 @@
                 <form method="POST" action="<?php echo base_url().'welcome/forgot_pass' ?>">
                   <div class="form-group">
                     <button type="submit" class="btn btn-dark btn-block" tabindex="4">
-                      Forgot Password Member 
+                      Forgot Password? 
                     </button>
                   </div>
                 </form>

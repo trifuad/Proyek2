@@ -12,6 +12,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="<?php echo base_url().'member' ?>">Home</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?php echo base_url().'profil/profil_sekolah' ?>">Profil Sekolah</a>
+				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="nav-item">				

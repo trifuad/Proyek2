@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Des 2020 pada 08.03
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.3
+-- Waktu pembuatan: 26 Des 2020 pada 07.10
+-- Versi server: 10.1.37-MariaDB
+-- Versi PHP: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -66,7 +66,8 @@ CREATE TABLE `anggota` (
 
 INSERT INTO `anggota` (`id_anggota`, `username`, `nama_anggota`, `gender`, `no_telp`, `alamat`, `email`, `password`) VALUES
 (1, 'bening', 'Bening Sukmaningrum', 'Perempuan', '082190223410', 'Turen, Malang', 'bening@gmail.com', 'ce60a0e18edc482f6c3cbd2fa1544c04'),
-(2, 'anggota', 'Anggota', 'Laki-Laki', '0812237891910', 'Malang', 'senyumina@gmail.com', 'dfb9e85bc0da607ff76e0559c62537e8');
+(2, 'anggota', 'Anggota', 'Laki-Laki', '0812237891910', 'Malang', 'senyumina@gmail.com', 'dfb9e85bc0da607ff76e0559c62537e8'),
+(32, 'inaa', 'Ina', 'Perempuan', '0812237891910', 'Malang', 'senyumina@gmail.com', 'inaa');
 
 -- --------------------------------------------------------
 
@@ -94,13 +95,13 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id_buku`, `id_kategori`, `judul_buku`, `pengarang`, `thn_terbit`, `penerbit`, `isbn`, `jumlah_buku`, `lokasi`, `gambar`, `tgl_input`, `status_buku`) VALUES
-(26, 8, 'Ayat - Ayat Cinta', 'Haryani', '2017-10-29', 'BSI CUY ANJAY', '1113147464', 18, 'Rak 1', 'gambar1560109811.jpg', '2019-03-27', '1'),
+(26, 8, 'Ayat - Ayat Cinta', 'Haryani', '2017-10-29', 'BSI CUY ANJAY', '1113147464', 12, 'Rak 1', 'gambar1560109811.jpg', '2019-03-27', '1'),
 (5, 8, 'Dilan 1990', 'Pidi Baiq', '2013-05-05', 'CV.Indo Kreasi', '3553234454', 26, 'Rak 1', 'gambar1554435238.PNG', '2019-03-27', '1'),
-(6, 4, 'Public Speaking', 'Pambudi Prasetyo', '2015-06-06', 'Aldi Pustaka', '843594759', 97, 'Rak 2', 'gambar1555855623.jpg', '2019-01-24', '1'),
-(7, 3, 'Trik SQL', 'Ahdim Makaren', '2014-07-07', 'Wacana Ria', '54234762', 3, 'Rak 1', 'gambar1539747068.jpg', '2019-03-23', '1'),
+(6, 4, 'Public Speaking', 'Pambudi Prasetyo', '2015-06-06', 'Aldi Pustaka', '843594759', 95, 'Rak 2', 'gambar1555855623.jpg', '2019-01-24', '1'),
+(7, 3, 'Trik SQL', 'Ahdim Makaren', '2014-07-07', 'Wacana Ria', '54234762', 1, 'Rak 1', 'gambar1539747068.jpg', '2019-03-23', '1'),
 (8, 6, 'Kemurnian Agama', 'Pambudi Prasetyo', '2014-08-08', 'Aldi Pustaka', '980958607', 0, 'Rak 3', 'gambar1539747079.jpg', '2018-07-24', '1'),
 (9, 3, 'Web Programming ', 'Ahdim Makaren', '2012-09-09', 'Wacana Ria', '12121314', 73, 'Rak 2', 'gambar1554436963.jpg', '2019-03-27', '1'),
-(10, 3, 'Dasar Pemrograman Java', 'Rudi Hartono', '2017-03-02', 'Unjung Pena', '12345345', 6, 'Rak 2', 'gambar1554436894.jpg', '2018-05-08', '1'),
+(10, 3, 'Dasar Pemrograman Java', 'Rudi Hartono', '2017-03-02', 'Unjung Pena', '12345345', 5, 'Rak 2', 'gambar1554436894.jpg', '2018-05-08', '1'),
 (33, 1, 'ioejfiofj', 'oijfeiofjeiofjioejiofj', '2018-10-27', 'oijiioejfioejf', '453439457', 100, 'Rak 2', 'gambar1562258670.png', '2019-07-04', '1'),
 (21, 8, 'Hujan', 'Fiqisulaiman', '2016-10-29', 'Gramedia', '1117474543', 97, 'Rak 2', 'gambar1553077127.PNG', '2019-03-20', '1');
 
@@ -192,8 +193,14 @@ INSERT INTO `orderan` (`id_pinjam`, `tgl_pencatatan`, `id_anggota`, `id_buku`, `
 ('PJ063', '2020-11-06 00:00:00', 2, 5, '2020-11-06', '2020-11-20', 1000, '2020-11-09', 0, '1', '1'),
 ('PJ065', '2020-11-09 00:00:00', 2, 6, '2020-11-09', '2020-11-23', 1000, '2020-11-10', 0, '1', '1'),
 ('PJ065', '2020-11-09 00:00:00', 2, 7, '2020-11-09', '2020-11-23', 1000, '2020-11-10', 0, '1', '1'),
-('PJ067', '2020-11-09 00:00:00', 2, 9, '2020-11-09', '2020-11-23', 1000, '0000-00-00', 0, 'Belum Selesai', 'Belum Kembali'),
-('PJ067', '2020-11-09 00:00:00', 2, 8, '2020-11-09', '2020-11-23', 1000, '0000-00-00', 0, 'Belum Selesai', 'Belum Kembali');
+('PJ067', '2020-11-09 00:00:00', 2, 9, '2020-11-09', '2020-11-23', 1000, '2020-12-18', 25000, '1', '1'),
+('PJ067', '2020-11-09 00:00:00', 2, 8, '2020-11-09', '2020-11-23', 1000, '2020-12-18', 25000, '1', '1'),
+('PJ069', '2020-12-18 00:00:00', 2, 6, '2020-12-18', '2021-01-01', 1000, '0000-00-00', 0, 'Belum Selesai', 'Belum Kembali'),
+('PJ071', '2020-12-18 00:00:00', 2, 26, '2020-12-18', '2021-01-01', 1000, '0000-00-00', 0, 'Belum Selesai', 'Belum Kembali'),
+('PJ071', '2020-12-18 00:00:00', 2, 7, '2020-12-18', '2021-01-01', 1000, '0000-00-00', 0, 'Belum Selesai', 'Belum Kembali'),
+('PJ071', '2020-12-18 00:00:00', 2, 10, '2020-12-18', '2021-01-01', 1000, '0000-00-00', 0, 'Belum Selesai', 'Belum Kembali'),
+('PJ073', '2020-12-24 00:00:00', 2, 6, '2020-12-24', '2021-01-07', 1000, '0000-00-00', 0, 'Belum Selesai', 'Belum Kembali'),
+('PJ073', '2020-12-24 00:00:00', 2, 7, '2020-12-24', '2021-01-07', 1000, '0000-00-00', 0, 'Belum Selesai', 'Belum Kembali');
 
 -- --------------------------------------------------------
 
@@ -284,8 +291,12 @@ INSERT INTO `peminjaman` (`id_pinjam`, `tanggal_input`, `id_anggota`, `tgl_pinja
 ('PJ064', '2020-11-09 12:11:18', 0, '2020-11-09', '2020-11-23', '0000-00-00', 0, 'Booking', 'Belum Kembali'),
 ('PJ065', '2020-11-09 12:11:07', 2, '2020-11-09', '2020-11-23', '2020-11-10', 0, 'Booking', 'Kembali'),
 ('PJ066', '2020-11-09 12:11:08', 0, '2020-11-09', '2020-11-23', '0000-00-00', 0, 'Booking', 'Belum Kembali'),
-('PJ067', '2020-11-09 12:11:23', 2, '2020-11-09', '2020-11-23', '0000-00-00', 0, 'Booking', 'Belum Kembali'),
-('PJ068', '2020-11-09 12:11:24', 0, '2020-11-09', '2020-11-23', '0000-00-00', 0, 'Booking', 'Belum Kembali');
+('PJ067', '2020-11-09 12:11:23', 2, '2020-11-09', '2020-11-23', '2020-12-18', 25000, 'Booking', 'Kembali'),
+('PJ068', '2020-11-09 12:11:24', 0, '2020-11-09', '2020-11-23', '0000-00-00', 0, 'Booking', 'Belum Kembali'),
+('PJ069', '2020-12-18 09:12:12', 2, '2020-12-18', '2021-01-01', '0000-00-00', 0, 'Booking', 'Belum Kembali'),
+('PJ070', '2020-12-18 09:12:12', 0, '2020-12-18', '2021-01-01', '0000-00-00', 0, 'Booking', 'Belum Kembali'),
+('PJ071', '2020-12-18 09:12:41', 2, '2020-12-18', '2021-01-01', '0000-00-00', 0, 'Booking', 'Belum Kembali'),
+('PJ072', '2020-12-18 09:12:41', 0, '2020-12-18', '2021-01-01', '0000-00-00', 0, 'Booking', 'Belum Kembali');
 
 -- --------------------------------------------------------
 
@@ -329,6 +340,14 @@ CREATE TABLE `transaksi` (
   `status_pengembalian` varchar(15) NOT NULL,
   `status_peminjaman` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `transaksi`
+--
+
+INSERT INTO `transaksi` (`id_pinjam`, `tgl_pencatatan`, `id_anggota`, `id_buku`, `tgl_pinjam`, `tgl_kembali`, `denda`, `tgl_pengembalian`, `total_denda`, `status_pengembalian`, `status_peminjaman`) VALUES
+('PJ073', '2020-12-24 00:00:00', 2, 6, '2020-12-24', '2021-01-07', 1000, '0000-00-00', 0, 'Belum Selesai', 'Belum Kembali'),
+('PJ073', '2020-12-24 00:00:00', 2, 7, '2020-12-24', '2021-01-07', 1000, '0000-00-00', 0, 'Belum Selesai', 'Belum Kembali');
 
 --
 -- Indexes for dumped tables
@@ -390,7 +409,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id_anggota` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_anggota` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT untuk tabel `buku`
